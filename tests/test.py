@@ -1,6 +1,6 @@
 import unittest
 
-from cryptography import eratosthenes, euler, factorization, gcd
+from cryptography import eratosthenes, euler, extended_gcd, factorization, gcd
 
 from .context import cryptography
 
@@ -17,6 +17,15 @@ class GcdTestSuite(unittest.TestCase):
         self.assertEqual(
             gcd.gcd(270, 192),
             6)
+
+
+class ExtendedGcdTestSuite(unittest.TestCase):
+    """Basic test cases."""
+
+    def test_extended_gcd(self):
+        self.assertEqual(
+            extended_gcd.extended_gcd(1914, 899),
+            (29, 8, -17))
 
 
 class FactorizationTestSuite(unittest.TestCase):
